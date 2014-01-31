@@ -1,0 +1,12 @@
+Safari Services Framework
+The Safari Services framework (SafariServices.framework) provides
+support for programmatically adding URLs to the user’s Safari reading list. 
+For information about the class provided by this framework, see the framework header files and sample code 
+for same is below.
+
+    SSReadingList * _aReadList = [SSReadingList defaultReadingList];
+    NSError * _anError = nil;
+    BOOL status =[_aReadList addReadingListItemWithURL:[NSURL URLWithString:_aText] title:@"" previewText:@"Any  Preview" error:&_anError];
+
+This Safari Service framework is available from iOS 7.0 later.
+Please do all precautionary check on and before integrating to your app.
