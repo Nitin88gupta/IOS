@@ -1,6 +1,11 @@
 Safari Services Framework
-The Safari Services framework (SafariServices.framework) provides
-support for programmatically adding URLs to the user’s Safari reading list. 
+
+iOS7 is a major update from Apple. This update compelling major features for developer to integrate into their apps. This Article summarizes one of the new key developer related feature introduced in iOS7.  
+
+Safari service framework provides support for developer to add URLs to user’s safari reading list.  From reading list user could read or go over the link has been added into the list.
+
+Eventually using this, a developer could add-on something more manageable feature for the number of people who have actually something to read for later use.
+
 For information about the class provided by this framework, see the framework header files and sample code 
 for same is below.
 
