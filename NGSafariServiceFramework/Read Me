@@ -1,17 +1,22 @@
 Safari Services Framework
 
-iOS7 is a major update from Apple. This update compelling major features for developer to integrate into their apps. This Article summarizes one of the new key developer related feature introduced in iOS7.  
+iOS7 is a major update from Apple. 
+This update compelling major features for developer to integrate into their apps. 
+This Article summarizes one of the new key developer related feature introduced in iOS7.  
 
-Safari service framework provides support for developer to add URLs to user’s safari reading list.  From reading list user could read or go over the link has been added into the list.
+Safari service framework provides support for developer to add URLs to user’s safari reading list. 
+From reading list user could read or go over the link has been added into the list.
 
-Eventually using this, a developer could add-on something more manageable feature for the number of people who have actually something to read for later use.
+Eventually using this, a developer could add-on something more manageable feature for 
+the number of people who have actually something to read for later use.
 
 For information about the class provided by this framework, see the framework header files and sample code 
 for same is below.
 
     SSReadingList * _aReadList = [SSReadingList defaultReadingList];
     NSError * _anError = nil;
-    BOOL status =[_aReadList addReadingListItemWithURL:[NSURL URLWithString:_aText] title:@"" previewText:@"Any  Preview" error:&_anError];
+    BOOL status =[_aReadList addReadingListItemWithURL:[NSURL URLWithString:_aText] 
+                            title:@"" previewText:@"Any  Preview" error:&_anError];
 
 This Safari Service framework is available from iOS 7.0 later.
 Please do all precautionary check on and before integrating to your app.
