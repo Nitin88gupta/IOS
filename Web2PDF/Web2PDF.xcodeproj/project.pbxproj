@@ -14,7 +14,6 @@
 		1C511DB4191514D500657B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C511DB3191514D500657B5A /* main.m */; };
 		1C511DB8191514D500657B5A /* NGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C511DB7191514D500657B5A /* NGAppDelegate.m */; };
 		1C511DBB191514D500657B5A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C511DB9191514D500657B5A /* Main_iPhone.storyboard */; };
-		1C511DBE191514D500657B5A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C511DBC191514D500657B5A /* Main_iPad.storyboard */; };
 		1C511DC1191514D500657B5A /* NGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C511DC0191514D500657B5A /* NGViewController.m */; };
 		1C511DC3191514D500657B5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C511DC2191514D500657B5A /* Images.xcassets */; };
 		1C511DCA191514D500657B5A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C511DC9191514D500657B5A /* XCTest.framework */; };
@@ -47,7 +46,6 @@
 		1C511DB6191514D500657B5A /* NGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGAppDelegate.h; sourceTree = "<group>"; };
 		1C511DB7191514D500657B5A /* NGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGAppDelegate.m; sourceTree = "<group>"; };
 		1C511DBA191514D500657B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		1C511DBD191514D500657B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		1C511DBF191514D500657B5A /* NGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGViewController.h; sourceTree = "<group>"; };
 		1C511DC0191514D500657B5A /* NGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGViewController.m; sourceTree = "<group>"; };
 		1C511DC2191514D500657B5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				1C511DB6191514D500657B5A /* NGAppDelegate.h */,
 				1C511DB7191514D500657B5A /* NGAppDelegate.m */,
 				1C511DB9191514D500657B5A /* Main_iPhone.storyboard */,
-				1C511DBC191514D500657B5A /* Main_iPad.storyboard */,
 				1C511DBF191514D500657B5A /* NGViewController.h */,
 				1C511DC0191514D500657B5A /* NGViewController.m */,
 				1C511DDF1915156200657B5A /* PDFConvertor */,
@@ -245,7 +242,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C511DBE191514D500657B5A /* Main_iPad.storyboard in Resources */,
 				1C511DC3191514D500657B5A /* Images.xcassets in Resources */,
 				1C511DBB191514D500657B5A /* Main_iPhone.storyboard in Resources */,
 				1C511DB2191514D500657B5A /* InfoPlist.strings in Resources */,
@@ -307,14 +303,6 @@
 				1C511DBA191514D500657B5A /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		1C511DBC191514D500657B5A /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C511DBD191514D500657B5A /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		1C511DD2191514D500657B5A /* InfoPlist.strings */ = {
@@ -411,6 +399,7 @@
 				GCC_PREFIX_HEADER = "Web2PDF/Web2PDF-Prefix.pch";
 				INFOPLIST_FILE = "Web2PDF/Web2PDF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -424,6 +413,7 @@
 				GCC_PREFIX_HEADER = "Web2PDF/Web2PDF-Prefix.pch";
 				INFOPLIST_FILE = "Web2PDF/Web2PDF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -489,6 +479,7 @@
 				1C511DDB191514D500657B5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C511DDC191514D500657B5A /* Build configuration list for PBXNativeTarget "Web2PDFTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +488,7 @@
 				1C511DDE191514D500657B5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

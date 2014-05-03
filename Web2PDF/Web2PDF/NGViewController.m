@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_urlTextField setText:@"https://github.com/Nitin88gupta/IOS"];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -35,7 +36,7 @@
 }
 
 #pragma mark Button Actions
-- (IBAction)generatePDFUsingDelegate:(id)sender {
+- (IBAction)loadGeneratorPDFUsingDelegate:(id)sender {
     if ([self validateURL]) {
         self.PDFCreator = [NGPDFViewController createPDFWithURL:[NSURL URLWithString:[_urlTextField text]]
                                                      pathForPDF:[@"~/Documents/NGPDF_delegateDemo.pdf" stringByExpandingTildeInPath]
@@ -47,7 +48,7 @@
     }
 }
 
-- (IBAction)generatePDFUsingBlocks:(id)sender {
+- (IBAction)loadGeneratorPDFUsingBlocks:(id)sender {
     if ([self validateURL]) {
         self.PDFCreator = [NGPDFViewController createPDFWithURL:[NSURL URLWithString:[_urlTextField text]] pathForPDF:[@"~/Documents/NGPDF_blocksDemo.pdf" stringByExpandingTildeInPath] pageSize:kPaperSizeA4 margins:UIEdgeInsetsMake(10, 5, 10, 5) successBlock:^(NGPDFViewController *webHTMLtoPDF) {
             NSString *result = [NSString stringWithFormat:@"webHTMLtoPDF did succeed (%@ / %@)", webHTMLtoPDF, webHTMLtoPDF.PDFpath];

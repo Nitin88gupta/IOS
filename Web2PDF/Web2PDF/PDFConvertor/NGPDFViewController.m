@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString *HTML;
 @property (nonatomic, strong) NSString *PDFpath;
 @property (nonatomic, strong) NSData *PDFdata;
-@property (nonatomic, strong) UIWebView *webview;
 @property (nonatomic, assign) CGSize pageSize;
 @property (nonatomic, assign) UIEdgeInsets pageMargins;
 
@@ -28,7 +27,7 @@
 
 @implementation NGPDFViewController
 
-@synthesize URL=_URL,webview,delegate=_delegate,PDFpath=_PDFpath,pageSize=_pageSize,pageMargins=_pageMargins;
+@synthesize URL=_URL,webview = _webview,delegate=_delegate,PDFpath=_PDFpath,pageSize=_pageSize,pageMargins=_pageMargins;
 
 // Create PDF by passing in the URL to a webpage
 + (id)createPDFWithURL:(NSURL*)URL pathForPDF:(NSString*)PDFpath delegate:(id <NGPDFDelegate>)delegate pageSize:(CGSize)pageSize margins:(UIEdgeInsets)pageMargins
@@ -137,15 +136,10 @@
 {
     [super viewDidLoad];
     
-    self.webview = [[UIWebView alloc] initWithFrame:self.view.frame];
-    webview.delegate = self;
-    
-    [self.view addSubview:webview];
-    
     if (self.HTML == nil) {
-        [webview loadRequest:[NSURLRequest requestWithURL:self.URL]];
+        [_webview loadRequest:[NSURLRequest requestWithURL:self.URL]];
     }else{
-        [webview loadHTMLString:self.HTML baseURL:self.URL];
+        [_webview loadHTMLString:self.HTML baseURL:self.URL];
     }
 }
 
@@ -204,11 +198,7 @@
 {
     [self.webview stopLoading];
     self.webview.delegate = nil;
-    [self.webview removeFromSuperview];
-    
     [self.view removeFromSuperview];
-    
-    self.webview = nil;
 }
 
 @end
