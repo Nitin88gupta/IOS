@@ -10,9 +10,10 @@
 #import "NGPDFViewController.h"
 
 @interface NGViewController : UIViewController <NGPDFDelegate> {
-    IBOutlet UITextField *_urlTextField;
+    NSString *_urlStr;
 }
 
 @property (nonatomic, strong) NGPDFViewController *PDFCreator;
+@property (nonatomic, weak) IBOutlet UILabel *resultStatusLabel;
 
 @end

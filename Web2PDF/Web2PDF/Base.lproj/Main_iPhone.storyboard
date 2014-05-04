@@ -12,14 +12,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://github.com/Nitin88gupta/IOS" borderStyle="roundedRect" placeholder="Enter URL Here" textAlignment="center" minimumFontSize="17" id="tcX-8J-fQV">
-                                <rect key="frame" x="79" y="226" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7J3-eA-bW3">
-                                <rect key="frame" x="76" y="286" width="169" height="30"/>
+                                <rect key="frame" x="76" y="99" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Load Page Delegate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,7 +23,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d70-WG-jdR">
-                                <rect key="frame" x="75" y="324" width="169" height="30"/>
+                                <rect key="frame" x="75" y="137" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Load Page Block">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,47 +32,25 @@
                                     <action selector="loadGeneratorPDFUsingBlocks:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bHd-tE-SYK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" id="8q9-Ya-QXj">
+                                <rect key="frame" x="20" y="228" width="280" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6L1-Dm-NYZ"/>
                     <connections>
-                        <outlet property="_urlTextField" destination="tcX-8J-fQV" id="aZl-tF-iUN"/>
+                        <outlet property="resultStatusLabel" destination="8q9-Ya-QXj" id="6JY-GR-vJC"/>
                         <outlet property="view" destination="kh9-bI-dsS" id="IaV-O2-fQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="-81"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="W7W-Io-XK3">
-            <objects>
-                <viewController id="SXP-iD-UN9" customClass="NGPDFViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lVA-iJ-UCZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="69p-Va-z8i">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="SXP-iD-UN9" id="aEb-WQ-9py"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dE8-qK-WUW"/>
-                    <connections>
-                        <outlet property="view" destination="lVA-iJ-UCZ" id="8Uw-79-aii"/>
-                        <outlet property="webview" destination="69p-Va-z8i" id="Gsw-Zm-Qo8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O1g-Xf-A3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1198" y="112"/>
+            <point key="canvasLocation" x="319" y="-33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ne-gW-w8x">

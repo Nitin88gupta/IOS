@@ -136,6 +136,11 @@
 {
     [super viewDidLoad];
     
+    _webview = [[UIWebView alloc] initWithFrame:self.view.frame];
+    _webview.delegate = self;
+    
+    [self.view addSubview:_webview];
+
     if (self.HTML == nil) {
         [_webview loadRequest:[NSURLRequest requestWithURL:self.URL]];
     }else{

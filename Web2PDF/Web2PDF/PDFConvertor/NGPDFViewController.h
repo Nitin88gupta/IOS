@@ -26,7 +26,7 @@ typedef void (^NGPDFCompletionBlock)(NGPDFViewController* webHTMLtoPDF);
 
 @property (nonatomic, copy) NGPDFCompletionBlock successBlock;
 @property (nonatomic, copy) NGPDFCompletionBlock errorBlock;
-@property (nonatomic, strong) IBOutlet UIWebView *webview;
+@property (nonatomic, strong) UIWebView *webview;
 
 @property (nonatomic, weak) id <NGPDFDelegate> delegate;
 
