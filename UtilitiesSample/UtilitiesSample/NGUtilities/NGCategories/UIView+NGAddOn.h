@@ -14,4 +14,6 @@
 
 - (void)setSize:(CGSize)_aSize;
 
+- (void)addOffset:(UIOffset)_anOffset;
+
 @end

@@ -20,4 +20,9 @@
     [self setFrame:_newRect];
 }
 
+- (void)addOffset:(UIOffset)_anOffset {
+    CGPoint _point = [self frame].origin;
+    [self setPosition:CGPointMake(_point.x + _anOffset.horizontal, _point.y + _anOffset.vertical)];
+}
+
 @end
