@@ -31,6 +31,7 @@
 		1CF18EA918FE419F00F8FF26 /* NGUtilitie.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF18EA218FE419F00F8FF26 /* NGUtilitie.m */; };
 		1CF18EAB18FE436E00F8FF26 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF18EAA18FE436E00F8FF26 /* MapKit.framework */; };
 		1CF18EAD18FE437400F8FF26 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF18EAC18FE437400F8FF26 /* CoreTelephony.framework */; };
+		8BFCB5871949C69C00E73272 /* UIButton+NGAddOn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB5861949C69C00E73272 /* UIButton+NGAddOn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		1CF18EA218FE419F00F8FF26 /* NGUtilitie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGUtilitie.m; sourceTree = "<group>"; };
 		1CF18EAA18FE436E00F8FF26 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1CF18EAC18FE437400F8FF26 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8BFCB5851949C69C00E73272 /* UIButton+NGAddOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NGAddOn.h"; sourceTree = "<group>"; };
+		8BFCB5861949C69C00E73272 /* UIButton+NGAddOn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NGAddOn.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				1CF18E9818FE419F00F8FF26 /* UIScrollView+NGAddOn.m */,
 				1CF18E9918FE419F00F8FF26 /* UIView+NGAddOn.h */,
 				1CF18E9A18FE419F00F8FF26 /* UIView+NGAddOn.m */,
+				8BFCB5851949C69C00E73272 /* UIButton+NGAddOn.h */,
+				8BFCB5861949C69C00E73272 /* UIButton+NGAddOn.m */,
 			);
 			path = NGCategories;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				1CF18EA718FE419F00F8FF26 /* UIView+NGAddOn.m in Sources */,
 				1CF18E6418FE418A00F8FF26 /* main.m in Sources */,
 				1CF18E6818FE418A00F8FF26 /* NGAppDelegate.m in Sources */,
+				8BFCB5871949C69C00E73272 /* UIButton+NGAddOn.m in Sources */,
 				1CF18EA318FE419F00F8FF26 /* NSString+NGAddOn.m in Sources */,
 				1CF18EA618FE419F00F8FF26 /* UIScrollView+NGAddOn.m in Sources */,
 				1CF18EA518FE419F00F8FF26 /* UIDevice+NGAddOn.m in Sources */,
