@@ -12,8 +12,9 @@
 #import "NSString+NGAddOn.h"
 #import "NSURL+NGAddOn.h"
 #import "UIView+NGAddOn.h"
-
-@interface NGViewController ()
+#import "UIButton+NGAddOn.h"
+@interface
+NGViewController ()
 
 @end
 
@@ -24,6 +25,7 @@
     [super viewDidLoad];
     _aFileManger = [NGFileHandler sharedFileManager];
     
+    [self blockButtonTest];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -164,5 +166,16 @@
         [viewRef setPosition:CGPointZero];
         [viewRef setSize:self.view.frame.size];
     }
+}
+
+- (void)blockButtonTest {
+    UIButton *_btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [_btn setAction:UIControlEventTouchUpInside withBlock:^{
+        NSLog(@"Block : %s",__FUNCTION__);
+    }];
+    [_btn setTitle:@"Tap On Screen and Check Console For Block Action Response" forState:UIControlStateNormal];
+    [_btn setBackgroundColor:[UIColor greenColor]];
+    [self.view addSubview:_btn];
+    [self.view bringSubviewToFront:_btn];
 }
 @end
