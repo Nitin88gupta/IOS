@@ -63,16 +63,10 @@ static NGBannerManager* sharedInstance = nil;
 -(void)displayNextBanner {
     if (_currentBannerView) {
         [self popBannerViewToBannerQueue:_currentBannerView];
+        _currentBannerView= nil;
     }
-    if (_bannersQueue && [_bannersQueue count]) {
-        double delayInSeconds = 0.5;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            _currentBannerView = nil;
-            NGMessageView *_msgView = [_bannersQueue firstObject];
-            [self displayBanner:_msgView];
-        });
-    }
+    NGMessageView *_msgView = [_bannersQueue firstObject];
+    [self displayBanner:_msgView];
 }
 
 -(void)displayBanner:(NGMessageView*)_msgView {

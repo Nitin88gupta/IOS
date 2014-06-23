@@ -24,6 +24,7 @@
 - (BOOL)isButtonListAvailable;
 @end
 
+float statusBarOffSet = 0;
 @implementation NGMessageView
 @synthesize delegate = _delegate;
 @synthesize direction = _direction;
@@ -45,6 +46,9 @@
         _duration = _dur;
         _direction = _animType;
         _callbacks = callBack ? [NSArray arrayWithObject:callBack] : [NSArray array];
+        if (![UIApplication sharedApplication].statusBarHidden) {
+            statusBarOffSet = [[UIApplication sharedApplication] statusBarFrame].size.height;
+        }
     }
     return self;
 }
@@ -66,6 +70,12 @@
     [self setFrame:_rect];
     
     CGRect _ttlRect = CGRectMake(0, 0, _rect.size.width, _tH);
+    CGRect _dscRect = CGRectMake(0, _tH, _rect.size.width, _dH);
+    if (_direction == kBannerAnimationTop) {
+        _ttlRect.origin.y += statusBarOffSet;
+        _dscRect.origin.y += statusBarOffSet;
+    }
+    
     UILabel *_bannerTitleLabel = [[UILabel alloc] initWithFrame:_ttlRect];
     [_bannerTitleLabel setText:_titleString];
     [_bannerTitleLabel setTextAlignment:NSTextAlignmentCenter];
@@ -76,7 +86,6 @@
     [_bannerTitleLabel setFont:kTitleFont];
     [self addSubview:_bannerTitleLabel];
     
-    CGRect _dscRect = CGRectMake(0, _tH, _rect.size.width, _dH);
     UILabel *_bannerDescriptionLabel = [[UILabel alloc] initWithFrame:_dscRect];
     [_bannerDescriptionLabel setText:_descriptionString];
     [_bannerDescriptionLabel setTextAlignment:NSTextAlignmentCenter];
@@ -110,8 +119,14 @@
         [_aButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
 
         [_aButton setTag:i];
-        [_aButton setFrame:CGRectMake(buttonPadding * 2 + buttonWidth * i + buttonPadding * i, _tH+_dH,
-                                     buttonWidth, kButtonH)];
+        
+        CGRect _btnRect = CGRectMake(buttonPadding * 2 + buttonWidth * i + buttonPadding * i, _tH+_dH,
+                                     buttonWidth, kButtonH);
+        
+        if (_direction == kBannerAnimationTop) {
+            _btnRect.origin.y += statusBarOffSet;
+        }
+        [_aButton setFrame:_btnRect];
         
         if (!([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)) {
             [_aButton setCenter:CGPointMake(_aButton.center.x, _aButton.center.y - kButtonH)];
@@ -155,9 +170,19 @@
     _tH = [self heightForText:_titleString havingWidth:_w andFont:kTitleFont];
     _dH = [self heightForText:_descriptionString havingWidth:_w andFont:kDescriptionFont];
     CGFloat _retVal = kButtonH + _tH + _dH;
-    if (_retVal > kBannerMaxHeight) {
-        _dH = kBannerMaxHeight - kButtonH - _tH;
-        _retVal = kBannerMaxHeight;
+    CGFloat _comp = kBannerMaxHeight;
+    
+    if (_direction == kBannerAnimationTop) {
+        _retVal += statusBarOffSet;
+        _comp += statusBarOffSet;
+    }
+    
+    if (_retVal > _comp) {
+        _dH = _comp - kButtonH - _tH;
+        if (_direction == kBannerAnimationTop) {
+            _dH -=statusBarOffSet;
+        }
+        _retVal = _comp;
     }
     return _retVal;
 }

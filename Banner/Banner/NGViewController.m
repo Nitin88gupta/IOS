@@ -56,7 +56,7 @@
                                                        messageType:type
                                                            buttons:buttonsList
                                                   autoDismissAfter:duration
-                                                     animationType:kBannerAnimationBottom
+                                                     animationType:kBannerAnimationTop
                                                       afterDismiss:^(int buttonIndex) {
                                                           [self bannerDismissedForIndex:buttonIndex];
                                                     }];
